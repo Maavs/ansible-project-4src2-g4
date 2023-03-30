@@ -1,0 +1,14 @@
+#Playbook pour le projet Automatisation de la virtualisation
+
+- hosts: lab_servers
+  vars_files:
+    - "{{ playbook_dir }}/globalvars/all.yml"
+    - "{{ playbook_dir }}/globalvars/users.yml"
+  roles:
+    - {role: apache2, tags: apache2}
+    - {role: files, tags: files}
+    - {role: ntp, tags: ntp}
+    - {role: iptables, tags: iptables}
+    - {role: users, tags: users}
+    - {role: url, tags: url}
+    - {role: template, tags: template}

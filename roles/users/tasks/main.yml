@@ -1,0 +1,18 @@
+---
+# tasks file for roles/users
+- name: Show the users list
+  debug:
+    msg: "{{ item.username }}"
+  loop: "{{ users }}"
+  loop_control:
+    label: "{{ item.username }}"
+
+- name: Create users from list users
+  ansible.builtin.user:
+    name: "{{ item.username }}"
+    password: "{{ item.passwd }}"
+    shell: "/bin/bash"
+    state: present
+  loop: "{{ users }}"
+  loop_control:
+    label: "{{ item.username }}"

@@ -1,0 +1,15 @@
+---
+# tasks file for roles/files
+- name: Copy file (esgi.jpeg) with owner and permissions
+  ansible.builtin.copy:
+    src: /home/ansible/data/esgi.jpeg
+    dest: /var/www/html
+    owner: www-data
+    group: www-data
+    mode: '0644'
+  register: result_copy_esgi_jpeg
+
+#- name: Show module copy attributes
+#  debug:
+#    var: result_copy_esgi_jpeg
+

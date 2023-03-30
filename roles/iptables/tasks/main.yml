@@ -1,0 +1,21 @@
+---
+# tasks file for roles/iptables
+- name: Install iptables
+  ansible.builtin.apt:
+    name: iptables
+    state: present
+  register: result_install_iptables
+
+- name: Already installed
+  debug:
+    msg: "iptables is already installed"
+  when: result_install_iptables.changed != true
+
+- name: Allow http with iptables
+  ansible.builtin.iptables:
+    chain: INPUT
+    protocol: tcp
+    destination_port: 80
+    jump: ACCEPT
+  register: result_allow_http
+  when: result_install_iptables.failed == false

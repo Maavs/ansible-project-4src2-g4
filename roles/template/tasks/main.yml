@@ -1,0 +1,20 @@
+---
+# tasks file for roles/template
+- name: Use template index.j2
+  template:
+    src: "{{ role_path }}/templates/index.j2"
+    dest: "/var/www/html/index.html"
+    owner: www-data
+    group: www-data
+    mode: "0755"
+  register: result_use_template
+
+- name: Register file content
+  shell: "cat /var/www/html/index.html"
+  register: result_register_filecontent
+  when:  result_use_template.failed == false
+
+- name: Display file content
+  debug:
+    msg: "{{ result_register_filecontent.stdout }}"
+  when: result_register_filecontent.failed == false

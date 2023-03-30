@@ -1,0 +1,23 @@
+---
+# tasks file for roles/url
+- name: Check url status
+  ansible.builtin.uri:
+    url: http://10.10.10.131
+    method: GET
+#    return_content: yes
+  ignore_errors: true
+  register: result_check_url
+
+#- name: Show resut of Check URL status
+#  debug:
+#    msg: "{{ result_check_url }}"
+
+- name: Display status message online
+  debug:
+    msg: "This URL is online"
+  when: result_check_url.status == 200
+
+- name: Display status message offline
+  fail:
+    msg: "This URL is offline"
+  when: result_check_url.status != 200
