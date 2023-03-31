@@ -1,6 +1,6 @@
 ---
 # tasks file for roles/ntp
-- name: Installation of ntp
+- name: Installation of ntp service
   ansible.builtin.apt:
     name: ntp
     state: present
@@ -18,7 +18,7 @@
     mode: 0644
   register: result_create_ntpconfig
 
-- name: NTP configuration file already created
+- name: ntp configuration file already created
   debug:
     msg: "ntp configuration file is already created"
   when: result_create_ntpconfig.changed != true
@@ -31,7 +31,7 @@
     label: "{{ item }}"
   when: result_create_ntpconfig.changed == false
 
-- name: Add servers in ntp configuration
+- name: Add servers in ntp configuration file
   ansible.builtin.lineinfile:
     path: "/etc/ntp.conf"
     line: "server {{ item }}"

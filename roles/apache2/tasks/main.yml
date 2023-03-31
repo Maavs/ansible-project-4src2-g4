@@ -6,7 +6,7 @@
     state: present
   register: result_apache2
 
-- name: show result_apache2
+- name: Show result_apache2
   debug:
     var: result_apache2
 

@@ -9,7 +9,3 @@
     mode: '0644'
   register: result_copy_esgi_jpeg
 
-#- name: Show module copy attributes
-#  debug:
-#    var: result_copy_esgi_jpeg
-

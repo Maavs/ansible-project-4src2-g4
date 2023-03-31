@@ -4,13 +4,8 @@
   ansible.builtin.uri:
     url: http://10.10.10.131
     method: GET
-#    return_content: yes
   ignore_errors: true
   register: result_check_url
-
-#- name: Show resut of Check URL status
-#  debug:
-#    msg: "{{ result_check_url }}"
 
 - name: Display status message online
   debug:

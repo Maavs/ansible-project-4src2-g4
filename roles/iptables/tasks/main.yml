@@ -1,6 +1,6 @@
 ---
 # tasks file for roles/iptables
-- name: Install iptables
+- name: Installation of iptables
   ansible.builtin.apt:
     name: iptables
     state: present
