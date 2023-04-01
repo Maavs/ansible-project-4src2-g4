@@ -13,6 +13,7 @@ This project aims to :
 # Prerequisites
   
   - Ansible installed
+  - Adjust ip address of remote(s) server(s) in "inventory" file
   - Copy ssh key of root user on remote(s) server(s) 
   - You have to create the vault password file for encrypted files ("globalvars/all.yml" and "globalvars/users.yml") and adjust path in vault_password_file (ansible.cfg) 
     - The actual password is "123AZEqsd"
