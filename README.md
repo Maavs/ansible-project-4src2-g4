@@ -22,8 +22,8 @@ This project aims to :
   
 # How to run the project
   
-  - Apply all roles : 
+  - Execute all roles : 
     - ``` ansible-playbook projet.yml```
-  - Apply specific role :
+  - Execute specific role :
     - ``` ansible-playbook projet.yml --tags role-name```
     - Example : ``` ansible-playbook projet.yml --tags ntp```
