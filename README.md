@@ -14,7 +14,9 @@ This project aims to :
   
   - Ansible installed
   - Adjust ip address of remote(s) server(s) in "inventory" file
-  - Copy ssh key of root user on remote(s) server(s) 
+  - Create service account (for playbook execution) 
+    - Create user "svc-ansible" and set password in "globalvars/linux.yml"
+    - Copy SSH pubkey on remote(s) server(s) in "/home/svc-ansible/.ssh/authorized_keys" 
   - You have to create the vault password file for encrypted files ("globalvars/all.yml" and "globalvars/users.yml") and adjust path in vault_password_file (ansible.cfg) 
     - The actual password is "123AZEqsd"
   
