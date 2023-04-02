@@ -17,6 +17,7 @@
     state: touch
     mode: 0644
   register: result_create_ntpconfig
+  changed_when: false
 
 - name: ntp configuration file already created
   debug:

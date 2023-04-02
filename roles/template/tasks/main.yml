@@ -13,6 +13,7 @@
   shell: "cat /var/www/html/index.html"
   register: result_register_filecontent
   when:  result_use_template.failed == false
+  changed_when: false
 
 - name: Display file content
   debug:
