@@ -7,7 +7,7 @@
   loop_control:
     label: "{{ item.username }}"
 
-- name: Create users from list users
+- name: Create users from users list
   ansible.builtin.user:
     name: "{{ item.username }}"
     password: "{{ item.passwd }}"
