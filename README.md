@@ -13,7 +13,7 @@ This project aims to :
 # Prerequisites
   
   - Ansible installed
-  - Adjust ip address of remote(s) server(s) in "inventory" file
+  - Adjust IP address(es) of remote(s) server(s) in "inventory" file
   - Create service account (for playbook execution) 
     - Create user "svc-ansible" and set password in "globalvars/linux.yml"
     - Copy SSH pubkey on remote(s) server(s) in "/home/svc-ansible/.ssh/authorized_keys" 
