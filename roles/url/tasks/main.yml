@@ -2,17 +2,18 @@
 # tasks file for roles/url
 - name: Check url status
   ansible.builtin.uri:
-    url: http://10.10.10.131
+    url: http://{{ ansible_ssh_host }}
     method: GET
   ignore_errors: true
+  failed_when: false
   register: result_check_url
 
 - name: Display status message online
   debug:
-    msg: "This URL is online"
+    msg: " This URL is online ! :) "
   when: result_check_url.status == 200
 
 - name: Display status message offline
-  fail:
-    msg: "This URL is offline"
+  debug:
+    msg: " This URL is offline ! :( "
   when: result_check_url.status != 200

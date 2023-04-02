@@ -16,3 +16,4 @@
   loop: "{{ users }}"
   loop_control:
     label: "{{ item.username }}"
+  become: yes

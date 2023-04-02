@@ -4,6 +4,7 @@
   ansible.builtin.apt:
     name: iptables
     state: present
+  become: yes
   register: result_install_iptables
 
 - name: Already installed
@@ -17,5 +18,6 @@
     protocol: tcp
     destination_port: 80
     jump: ACCEPT
+  become: yes
   register: result_allow_http
   when: result_install_iptables.failed == false

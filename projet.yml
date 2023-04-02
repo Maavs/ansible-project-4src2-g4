@@ -4,6 +4,7 @@
   vars_files:
     - "{{ playbook_dir }}/globalvars/all.yml"
     - "{{ playbook_dir }}/globalvars/users.yml"
+    - "{{ playbook_dir }}/globalvars/linux.yml"
   roles:
     - {role: apache2, tags: apache2}
     - {role: files, tags: files}
