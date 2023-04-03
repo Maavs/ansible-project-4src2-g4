@@ -20,7 +20,7 @@ This project aims to :
   - You have to create the vault password file for encrypted files ("globalvars/all.yml" and "globalvars/users.yml") and adjust path in vault_password_file (ansible.cfg) 
     - The actual password is "123AZEqsd"
   
-# How to run the project
+# How to run
   
   - Execute all roles : 
     ```bash
