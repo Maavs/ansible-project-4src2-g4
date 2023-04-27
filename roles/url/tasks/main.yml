@@ -14,6 +14,6 @@
   when: result_check_url.status == 200
 
 - name: Display status message offline
-  debug:
+  fail:
     msg: " This URL is offline ! :( "
   when: result_check_url.status != 200
